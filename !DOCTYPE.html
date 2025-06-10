@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8000+ ChatGPT Prompt Bundle</title>
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://checkout.razorpay.com"/>
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent-color: #e53935;
+      --card-bg: #111;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .price-wrapper {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .original-price {
+      font-size: 1rem;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    .discounted-price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+    .countdown {
+      margin: 1rem 0;
+      font-size: 1.25rem;
+    }
+    .cta {
+      margin-top: 1rem;
+    }
+    .razorpay-payment-button {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .razorpay-payment-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    /* Sections */
+    section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .problem, .testimonial {
+      background: var(--card-bg);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      transition: transform .2s;
+    }
+    .problem:hover, .testimonial:hover {
+      transform: translateY(-2px);
+    }
+    .features-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .features-list li::before {
+      content: "✅ ";
+    }
+    .testimonial .author {
+      font-style: italic;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+    /* Sticky bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+    /* FAQ */
+    #faq .faq-answer {
+      display: none;
+      padding: 0.5rem 1rem;
+      background: var(--card-bg);
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    #faq .faq-question {
+      width: 100%;
+      text-align: left;
+      background: var(--card-bg);
+      color: var(--text-color);
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="price-wrapper">
+      <span class="original-price">₹1499</span>
+      <span class="discounted-price">₹399</span>
+    </div>
+    <h1>Unlock 8,000+ Proven ChatGPT Prompts</h1>
+    <p>Get instant access to every niche, every use-case—no more writer’s block.</p>
+    <div class="countdown">
+      Offer ends in <span id="timer">24:00:00</span>
+    </div>
+    <div class="cta">
+      <form>
+        <script
+          src="https://checkout.razorpay.com/v1/payment-button.js"
+          data-payment_button_id="pl_QfWLdT6PElY67I"
+          async
+        ></script>
+      </form>
+    </div>
+  </div>
+
+  <!-- Problems → Solutions -->
+  <section id="problems">
+    <div class="problem">
+      <h3>Stuck staring at a blank screen?</h3>
+      <p>Pick from 8,000+ ready-to-use prompts and write instantly.</p>
+    </div>
+    <div class="problem">
+      <h3>Wasting hours brainstorming ideas?</h3>
+      <p>Filter by category in seconds: marketing, coding, creative, more.</p>
+    </div>
+    <div class="problem">
+      <h3>Uncertain which prompt works best?</h3>
+      <p>Every prompt is battle-tested—and comes with real-user ratings.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <ul class="features-list">
+      <li>8,000+ Categorized Prompts</li>
+      <li>Instant Download, Lifetime Access</li>
+      <li>Works on Any Device</li>
+      <li>4.9★ Average Rating from 2,000+ Users</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2 style="text-align:center;">What Indian Users Are Saying</h2>
+    <div class="testimonial">
+      <p>"This bundle saved me hours of brainstorming!"</p>
+      <p class="author">— Anita, Mumbai</p>
+    </div>
+    <div class="testimonial">
+      <p>"My blog traffic doubled in days after using these prompts."</p>
+      <p class="author">— Rajesh, Delhi</p>
+    </div>
+    <div class="testimonial">
+      <p>"The best ₹399 I've ever invested for my writing career."</p>
+      <p class="author">— Priya, Bangalore</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 style="text-align:center;">FAQ</h2>
+    <button class="faq-question">Do I need ChatGPT Pro?</button>
+    <div class="faq-answer">No, this works with both free and paid ChatGPT accounts.</div>
+
+    <button class="faq-question">How will I receive the prompts?</button>
+    <div class="faq-answer">You’ll get an instant PDF download link right after purchase.</div>
+  </section>
+
+  <!-- Sticky Purchase Bar -->
+  <div class="sticky-bar">
+    <div class="price-wrapper">
+      <span class="original-price">₹1499</span>
+      <span class="discounted-price">₹399</span>
+    </div>
+    <form>
+      <script
+        src="https://checkout.razorpay.com/v1/payment-button.js"
+        data-payment_button_id="pl_QfWLdT6PElY67I"
+        async
+      ></script>
+    </form>
+  </div>
+
+  <!-- Countdown & FAQ Toggle Script -->
+  <script>
+    // Countdown Timer
+    (function(){
+      const timerEl = document.getElementById('timer');
+      const deadline = new Date(Date.now() + 24*60*60*1000);
+      function updateTimer(){
+        const diff = deadline - new Date();
+        if (diff <= 0) {
+          timerEl.textContent = '00:00:00';
+          clearInterval(interval);
+          return;
+        }
+        const hrs = String(Math.floor(diff / 3600000)).padStart(2, '0');
+        const mins = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+        const secs = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        timerEl.textContent = `${hrs}:${mins}:${secs}`;
+      }
+      updateTimer();
+      const interval = setInterval(updateTimer, 1000);
+    })();
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>

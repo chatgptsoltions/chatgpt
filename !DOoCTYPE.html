@@ -16,27 +16,27 @@
       --badge-bg: #222;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.4; overflow-x: hidden; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.4; overflow-x: hidden; padding-bottom: 80px; }
     .container { width: 100%; max-width: 700px; margin: 0 auto; padding: var(--gap) 1rem; }
     h1, h2, h3 { text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
 
-    /* Hero */
-    .hero { background: linear-gradient(135deg, #111, #000); text-align: center; padding: var(--gap) 1rem; border-radius: var(--radius); margin-bottom: var(--gap); position: relative; }
+    /* Hero + Wave */
+    .hero { position: relative; background: linear-gradient(135deg, #111, #000); text-align: center; padding: var(--gap) 1rem 4rem; border-radius: var(--radius); margin-bottom: var(--gap); overflow: hidden; }
+    .hero svg { position: absolute; bottom: 0; left: 0; width: 100%; height: auto; }
     .hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; }
     .hero p { font-size: 1rem; opacity: 0.9; margin-bottom: var(--gap); }
+
+    /* Pricing & Stats */
     .price-wrap { display: inline-flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem; }
     .price-wrap .original { font-size: 1rem; text-decoration: line-through; opacity: 0.6; }
-    .price-wrap .discount { font-size: 2.2rem; font-weight: 900; color: var(--accent); }
-    .countdown { font-size: 1rem; margin-bottom: var(--gap); }
-    .viewers, .stock { font-size: 0.9rem; margin-bottom: var(--gap); display: flex; justify-content: center; gap: 0.3rem; align-items: center; opacity: 0.9; }
+    .price-wrap .discount { font-size: 2.4rem; font-weight: 900; color: var(--accent); }
+    .countdown { font-size: 1rem; margin: 0.5rem 0; }
+    .viewers, .stock { font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.9; margin: 0.25rem 0; }
     .viewers span, .stock span { font-weight: 900; color: var(--accent); }
 
     /* Badges */
-    .badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: var(--gap); flex-wrap: wrap; }
+    .badges { display: flex; justify-content: center; gap: 1rem; margin-top: var(--gap); flex-wrap: wrap; }
     .badge { background: var(--badge-bg); padding: 0.5rem 1rem; border-radius: var(--radius); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; }
-
-    /* Highlight */
-    .highlight { background: var(--card); border-radius: var(--radius); padding: var(--gap); text-align: center; margin-bottom: var(--gap); font-size: 1rem; font-weight: 700; }
 
     /* Info Section */
     .info { margin-bottom: var(--gap); }
@@ -52,10 +52,13 @@
     .reviews { margin-bottom: var(--gap); }
     .reviews h2 { text-align: center; font-size: 1.5rem; margin-bottom: var(--gap); }
     .review-list { display: flex; overflow-x: auto; gap: 0.5rem; padding-bottom: 0.5rem; }
-    .review { min-width: 200px; background: var(--card); border-radius: var(--radius); padding: 1rem; flex: 0 0 auto; text-align: center; transition: transform .2s; }
+    .review { min-width: 200px; background: var(--card); border-radius: var(--radius); padding: 1rem; text-align: center; transition: transform .2s; }
     .review:hover { transform: translateY(-4px); }
     .review p { font-size: 0.9rem; margin-bottom: 0.5rem; }
     .author { font-style: italic; font-size: 0.8rem; opacity: 0.7; }
+
+    /* Highlight */
+    .highlight { background: var(--card); border-radius: var(--radius); padding: var(--gap); text-align: center; margin-bottom: var(--gap); font-size: 1rem; font-weight: 700; }
 
     /* FAQ */
     .faq { margin-bottom: var(--gap); }
@@ -64,24 +67,22 @@
     .faq-question { width: 100%; background: var(--card); color: var(--fg); padding: 0.75rem 1rem; border: none; border-radius: var(--radius); text-align: left; font-weight: 800; cursor: pointer; }
     .faq-answer { background: var(--card); padding: 0.75rem 1rem; border-radius: var(--radius); display: none; font-size: 0.9rem; opacity: 0.8; }
 
-    /* Button */
-    .btn-primary { display: inline-block; background: linear-gradient(45deg, var(--accent), #b52b2b); color: var(--fg); padding: 0.8rem 2rem; font-size: 1rem; font-weight: 900; letter-spacing: 1px; border: none; border-radius: var(--radius); cursor: pointer; text-transform: uppercase; position: relative; overflow: hidden; margin-bottom: var(--gap); transition: transform .2s; }
-    .btn-primary:hover { transform: scale(1.03); }
-    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: rgba(255,255,255,0.1); transition: left 0.5s; }
-    .btn-primary:hover::after { left: 100%; }
+    /* Hide default Razorpay button */
+    .razorpay-payment-button { display: none !important; }
+    /* Custom Trigger Button */
+    .custom-btn { display: inline-block; background: linear-gradient(45deg, var(--accent), #b52b2b); color: var(--fg); padding: 0.8rem 2rem; font-size: 1rem; font-weight: 900; border: none; border-radius: var(--radius); text-transform: uppercase; cursor: pointer; transition: transform .2s; margin: 1rem auto 0; }
+    .custom-btn:hover { transform: scale(1.03); }
 
-    /* Floating Buy Button */
-    .floating-buy { position: fixed; bottom: 20px; right: 20px; z-index: 1001; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-
-    /* Mobile Bottom CTA */
+    /* Mobile CTA */
+    .mobile-cta { display: none; }
     @media (max-width: 600px) {
-      .floating-buy { bottom: 0; right: 0; width: 100%; border-radius: 0; font-size: 1.1rem; padding: 1rem 0; }
+      .mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; width: 100%; justify-content: center; background: var(--accent); padding: 0.5rem; z-index: 1001; }
+      .mobile-cta .custom-btn { width: 90%; border-radius: var(--radius); padding: 1rem; font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Hero -->
     <div class="hero">
       <h1>Unlock 8,000+ Proven ChatGPT Prompts</h1>
       <p>Every niche · Every use-case · Instant download</p>
@@ -92,15 +93,19 @@
       <div class="countdown">⏰ Offer ends in <span id="timer">24:00:00</span></div>
       <div class="viewers">🔥 <span id="viewer-count">123</span> viewing now</div>
       <div class="stock">⚡ Only <span id="stock-count">27</span> left!</div>
-      <button class="btn-primary">Buy Now ₹399</button>
+      <!-- Hidden form -->
+      <form id="razorpay-form">
+        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QfWLdT6PElY67I" async></script>
+      </form>
+      <!-- Visible Buy Button -->
+      <button class="custom-btn" id="pay-button">Buy Now ₹399</button>
       <div class="badges">
         <div class="badge">📥 Instant Access</div>
         <div class="badge">🔒 Secure Checkout</div>
         <div class="badge">💯 4.9★ Rating</div>
-      }</div>
+      </div>
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.14,22.08,103.38,29.34,158.8,23.1C256.49,60.16,312.55,28.11,368.65,17.78c63.72-11.86,121.09,17.48,184.78,23.35,60.08,5.61,114.23-10.45,171-24.24,59.32-14.36,113.65-7,171.14,17.72,41.49,17.1,85.05,39.18,133.33,44.18,70.54,7.81,137.5-24.77,206.4-39.47V0Z" fill="#000"></path></svg>
     </div>
-
-    <!-- Creative Info Section -->
     <section class="info">
       <h2>Why You'll Love This Bundle</h2>
       <div class="info-list">
@@ -110,8 +115,6 @@
         <div class="info-item"><div class="icon">📈</div><h3>Boost ROI</h3><p>Tested by real users—watch your conversions climb.</p></div>
       </div>
     </section>
-
-    <!-- Reviews -->
     <section class="reviews">
       <h2>Real User Reviews</h2>
       <div class="review-list">
@@ -120,11 +123,7 @@
         <div class="review"><p>"Best ₹399 investment ever."</p><div class="author">— Priya, Bangalore</div></div>
       </div>
     </section>
-
-    <!-- Highlight -->
     <div class="highlight">Join over 10,000 satisfied users who’ve unlocked their creativity!</div>
-
-    <!-- FAQ -->
     <section class="faq">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item"><button class="faq-question">Do I need ChatGPT Pro?</button><div class="faq-answer">No—this works with both free and paid accounts.</div></div>
@@ -132,14 +131,22 @@
       <div class="faq-item"><button class="faq-question">Any future updates?</button><div class="faq-answer">Yes—lifetime access includes all future additions.</div></div>
     </section>
   </div>
-
-  <!-- Floating Buy Button -->
-  <button class="btn-primary floating-buy">Buy Now ₹399</button>
-
-  <!-- Scripts -->
+  <!-- Mobile CTA -->
+  <div class="mobile-cta">
+    <button class="custom-btn" onclick="document.querySelector('#razorpay-form .razorpay-payment-button').click()">Buy Now ₹399</button>
+  </div>
   <script>
-    // Countdown, viewers, stock, notifications as before
-    document.querySelectorAll('.faq-question').forEach(btn=>{ btn.onclick=()=>{ const ans=btn.nextElementSibling; ans.style.display=ans.style.display==='block'?'none':'block'; }; });
+    // Trigger Razorpay from custom buttons
+    document.getElementById('pay-button').addEventListener('click', function() {
+      document.querySelector('#razorpay-form .razorpay-payment-button').click();
+    });
+    // Countdown Timer
+    (function(){ const el=document.getElementById('timer'); const end=Date.now()+24*60*60*1000; function tick(){ let ms=end-Date.now(); if(ms<0) ms=0; const h=String(Math.floor(ms/3600000)).padStart(2,'0'); const m=String(Math.floor((ms%3600000)/60000)).padStart(2,'0'); const s=String(Math.floor((ms%60000)/1000)).padStart(2,'0'); el.textContent=`${h}:${m}:${s}`;} tick(); setInterval(tick,1000); })();
+    // Simulate viewers
+    setInterval(()=>{ const el=document.getElementById('viewer-count'); el.textContent=+el.textContent + Math.floor(Math.random()*5); }, 5000);
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(btn=> btn.onclick=()=>{ const ans=btn.nextElementSibling; ans.style.display = ans.style.display==='block'?'none':'block'; });
   </script>
 </body>
 </html>
+
